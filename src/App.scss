@@ -1,0 +1,19 @@
+@use './styles/partials/_resets.scss' as *;
+
+.app {
+  position: relative;
+  min-height: 100vh;
+
+  &__nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__footer {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}

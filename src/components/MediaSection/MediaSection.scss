@@ -1,0 +1,53 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.media-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #f7f4f2;
+
+  &__header {
+    font-family: 'Baskerville Bold';
+    color: rgb(248, 190, 175);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__media-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@include small() {
+  .media-section {
+    padding: 7rem 2rem 10rem 2rem;
+
+    &__header {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .media-section {
+    padding: 5rem 4rem 10rem 4rem;
+
+    &__header {
+      font-size: 2.25rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+@include large() {
+  .media-section {
+    padding: 10rem 4rem 10rem 4rem;
+
+    &__header {
+      font-size: 4rem;
+    }
+  }
+}

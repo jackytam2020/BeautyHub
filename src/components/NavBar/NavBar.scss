@@ -1,0 +1,187 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    z-index: 2;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    object-fit: cover;
+  }
+
+  &__more-services {
+    width: 12.5rem;
+    background-color: white;
+    position: absolute;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem 0rem 1rem;
+
+    span {
+      padding-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__more-services--hidden {
+    display: none;
+  }
+
+  &__menu-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.2s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__menu-popup--hidden {
+    display: none;
+  }
+
+  &__menu-items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__services-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__services-menu-item {
+    display: flex;
+    font-size: 3.125rem;
+    align-items: center;
+    color: grey;
+    margin-bottom: 1.5rem;
+  }
+
+  &__menu-item {
+    font-size: 3.125rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-book-button {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
+
+@include small() {
+  .nav-bar {
+    &__container {
+      padding: 2rem 2rem 0rem 2rem;
+    }
+
+    &__logo {
+      width: 6.25rem;
+      height: 2rem;
+    }
+
+    &__book-button {
+      display: none;
+    }
+
+    &__nav-links {
+      display: none;
+    }
+
+    &__menu-item,
+    &__services-menu-item {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .nav-bar {
+    &__container {
+      padding: 4rem 4rem 0rem 4rem;
+    }
+
+    &__logo {
+      width: 6.25rem;
+      height: 2rem;
+    }
+
+    &__book-button {
+      display: none;
+    }
+
+    &__nav-links {
+      display: none;
+    }
+  }
+}
+
+@include large() {
+  .nav-bar {
+    &__container {
+      padding: 2rem 4rem 0rem 4rem;
+    }
+
+    &__logo {
+      width: 10rem;
+      height: 3.1rem;
+    }
+    &__book-button {
+      display: block;
+    }
+
+    &__nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    &__link-items > a {
+      color: black;
+      padding-right: 1rem;
+    }
+
+    &__services-link {
+      position: relative;
+    }
+
+    &__hamburger-menu {
+      display: none;
+    }
+
+    &__menu-popup {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.home-page {
+  width: 100%;
+  background-color: bisque;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@include small() {
+}
+
+@include medium() {
+}
+
+@include large() {
+}

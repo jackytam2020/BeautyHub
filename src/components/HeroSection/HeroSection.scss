@@ -1,0 +1,99 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
+  &__header {
+    font-family: 'Baskerville Bold';
+    color: rgb(248, 190, 175);
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include small() {
+  .hero-section {
+    width: 90%;
+
+    &__header {
+      font-size: 2.75rem;
+    }
+
+    &__copy-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    &__copy {
+      font-size: 1.5rem;
+      padding-bottom: 1.125rem;
+    }
+
+    &__sub-copy {
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+@include medium() {
+  .hero-section {
+    width: 40%;
+
+    &__header {
+      font-size: 2.75rem;
+    }
+
+    &__copy-container {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      margin-left: auto;
+      margin-top: 3rem;
+    }
+
+    &__copy {
+      font-size: 1.5rem;
+      padding-bottom: 1.125rem;
+    }
+
+    &__sub-copy {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+@include large() {
+  .hero-section {
+    width: 40%;
+
+    &__header {
+      font-size: 4rem;
+    }
+
+    &__copy-container {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      margin-left: auto;
+      margin-top: 3rem;
+    }
+
+    &__copy {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+    }
+
+    &__sub-copy {
+      padding-bottom: 2rem;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Futura';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* remove default margins for more control of spacing */
+h1,
+h2,
+h3,
+a,
+p {
+  margin: 0;
+}
+
+ul,
+label,
+textarea {
+  margin: 0;
+}
+textarea,
+input {
+  font-family: inherit;
+}
+
+select {
+  font-family: 'Futura';
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+  margin: 0;
+}
