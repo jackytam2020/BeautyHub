@@ -3,10 +3,11 @@
 .button-regular {
   width: 8rem;
   height: 3rem;
-  border: 1px solid black;
+  border: 2px solid rgb(238, 190, 180);
   background-color: inherit;
   border-radius: 3px;
   cursor: pointer;
+  color: rgb(238, 190, 180);
 
   &__text {
     font-family: 'Futura Bold';
@@ -14,7 +15,7 @@
 }
 
 .button-regular:hover {
-  background-color: black;
+  background-color: rgb(238, 190, 180);
 
   .button__text {
     color: white;

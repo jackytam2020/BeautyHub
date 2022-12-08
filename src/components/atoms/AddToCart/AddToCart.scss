@@ -1,0 +1,13 @@
+.add-cart {
+  margin-top: 1rem;
+  &__input-button {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__quantity-input {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+  }
+}

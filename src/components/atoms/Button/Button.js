@@ -8,7 +8,7 @@ function Button(props) {
   if (props.size === 'regular') buttonClassname = 'button-regular';
 
   return (
-    <button className={buttonClassname}>
+    <button className={buttonClassname} onClick={props.onClick}>
       <p className="button__text">{props.text}</p>
     </button>
   );

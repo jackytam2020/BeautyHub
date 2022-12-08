@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './NavBar.scss';
 import Logo from '../../assets/images/logo.png';
 import Button from '../atoms/Button/Button';
-
+import { HiShoppingCart } from 'react-icons/hi';
+import { CartContext } from '../../CartContext';
 import { Link } from 'react-router-dom';
 
 import {
@@ -15,6 +16,12 @@ import {
 function NavBar(props) {
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+
+  const cart = useContext(CartContext);
+  const itemsCount = cart.items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <nav className="nav-bar">
@@ -57,6 +64,9 @@ function NavBar(props) {
               <Link to={'/book-details'}>Book</Link>
             </li>
             <li className="nav-bar__link-items">
+              <Link to={'/shop'}>Shop</Link>
+            </li>
+            <li className="nav-bar__link-items">
               <Link to={'/about-us'}>About Us</Link>
             </li>
             <li className="nav-bar__link-items">
@@ -65,9 +75,23 @@ function NavBar(props) {
           </ul>
         </div>
         <div className="nav-bar__right">
+          <Link to={'/cart'}>
+            <div className="nav-bar__cart-button">
+              <HiShoppingCart className="nav-bar__cart-icon" />
+              <p className="nav-bar__cart-counter">
+                {itemsCount > 0 && itemsCount}
+              </p>
+            </div>
+          </Link>
           <div className="nav-bar__book-button">
-            <Button text={'BOOK NOW'} size={'regular'} />
+            <a
+              target="_blank"
+              href="https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true"
+            >
+              <Button text={'BOOK NOW'} size={'regular'} />
+            </a>
           </div>
+
           <div className="nav-bar__hamburger-menu">
             <div
               onClick={() => {

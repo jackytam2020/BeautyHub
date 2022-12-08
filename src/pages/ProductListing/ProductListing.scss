@@ -1,0 +1,71 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.product-listing {
+  width: 100%;
+  background-color: #f7f4f2;
+  display: flex;
+  padding-bottom: 4rem;
+
+  &__container {
+    display: grid;
+    margin-top: 7rem;
+  }
+}
+
+@include small() {
+  .product-listing {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__product-img {
+      max-height: 375px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__product-information {
+      width: 100%;
+      padding: 2rem 2rem 0rem 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .product-listing {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__product-img {
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__product-information {
+      width: 100%;
+      padding: 2rem 2rem 0rem 2rem;
+    }
+  }
+}
+
+@include large() {
+  .product-listing {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__product-img {
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__product-information {
+      width: 100%;
+      padding: 2rem 2rem 0rem 2rem;
+    }
+  }
+}

@@ -2,9 +2,7 @@
 @use '../../styles/partials/font-faces' as *;
 
 .nav-bar {
-  display: flex;
   flex-direction: column;
-  z-index: 2;
   position: relative;
 
   &__container {
@@ -98,6 +96,26 @@
   &__menu-book-button {
     position: absolute;
     bottom: 2rem;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cart-button {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+
+  &__cart-counter {
+    font-size: 1.3rem;
+  }
+
+  &__cart-icon {
+    height: 2rem;
+    width: 2rem;
   }
 }
 
