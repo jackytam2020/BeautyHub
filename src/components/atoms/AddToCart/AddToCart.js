@@ -39,16 +39,8 @@ function AddToCart(props) {
   };
 
   useEffect(() => {
-    const data = localStorage.getItem('Cart Items');
-    if (data) {
-    } else {
-      localStorage.setItem('Cart Items', JSON.stringify(cart.items));
-    }
+    localStorage.setItem('Cart Items', JSON.stringify(cart.items));
   }, [cart.items]);
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('Cart Items'));
-  }, []);
 
   return (
     <section className="add-cart">

@@ -85,7 +85,7 @@ function ProductListing(props) {
     let selectedItemId;
 
     //selection returns a value of index of drop down item.
-    //0 will always be the smaller size and 1 will always be bigger size
+    //0 will always be the smaller size and 1 will always be the bigger size
 
     if (selection === 0) {
       selectedItemId = selectedProduct.smallerSizeID;

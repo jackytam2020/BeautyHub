@@ -10,7 +10,9 @@ export const CartContext = createContext({
 });
 
 export function CartProvider({ children }) {
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(() => {
+    return JSON.parse(localStorage.getItem('Cart Items')) || [];
+  });
 
   const getProductQuantity = (id) => {
     const quantity = cartProducts.find(

@@ -22,8 +22,10 @@
   }
 
   &__drop-area--closed {
-    display: none;
+    height: 0px;
     transition: 0.2s;
+    padding-left: 1rem;
+    overflow: hidden;
   }
 
   &__drop-area--active {
