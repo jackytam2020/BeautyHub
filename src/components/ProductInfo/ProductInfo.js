@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductInfo.scss';
 import AddToCart from '../atoms/AddToCart/AddToCart';
+import SizeSelector from '../atoms/SizeSelector/SizeSelector';
 
 function ProductInfo(props) {
   let extraDetails;
@@ -154,11 +155,25 @@ function ProductInfo(props) {
     </div>
   );
 
+  const [selectedDropDownItem, setSelectedDropDownItem] =
+    useState('Select a size');
+
+  let sizes = [];
+
+  if (props.selectedProduct.size1) {
+    sizes.push(props.selectedProduct.size1, props.selectedProduct.size2);
+  }
+
   return (
     <div className="product-info">
       <p className="product-info__header">{`AT-HOME SELF CARE - ${props.selectedProduct.name}`}</p>
       <h1 className="product-info__name">{props.selectedProduct.name}</h1>
-      <p className="product-info__price">{`$${props.price}`}</p>
+      <p className="product-info__price">
+        {selectedDropDownItem === 'Select a size' &&
+        props.selectedProduct.variantProduct
+          ? `From $${props.price}`
+          : `$${props.price}`}
+      </p>
       {props.selectedProduct.tagline && (
         <h2 className="product-info__tagline">
           {props.selectedProduct.tagline}
@@ -170,9 +185,19 @@ function ProductInfo(props) {
         </p>
       )}
       {extraDetails}
+      {props.selectedProduct.size1 && (
+        <SizeSelector
+          sizes={sizes}
+          getProductByDropdown={props.getProductByDropdown}
+          selectedProduct={props.selectedProduct}
+          selectedDropDownItem={selectedDropDownItem}
+          setSelectedDropDownItem={setSelectedDropDownItem}
+        />
+      )}
       <AddToCart
         selectedProduct={props.selectedProduct}
         setSelectedProduct={props.setSelectedProduct}
+        selectedDropDownItem={selectedDropDownItem}
         price={props.price}
       />
       {props.selectedProduct.directionalUse1 && directionalUse}

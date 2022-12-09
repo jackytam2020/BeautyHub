@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './AddToCart.scss';
 import Button from '../Button/Button';
 import { CartContext } from '../../../CartContext';
@@ -17,6 +17,39 @@ function AddToCart(props) {
     });
   };
 
+  //function needed for items that have multiple sizes
+  //user must pick a size before adding to cart
+  const checkForSelectedItem = () => {
+    if (
+      props.selectedDropDownItem === 'Select a size' &&
+      props.selectedProduct.variantProduct
+    ) {
+      alert('Please select a size');
+    } else {
+      cart.addToCart(
+        props.selectedProduct.id,
+        parseInt(props.price),
+        props.selectedProduct.priceID,
+        props.selectedProduct.imgSrc,
+        props.selectedProduct.name,
+        parseInt(quantity)
+      );
+      setCartBtnStatus('Added To Cart!');
+    }
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem('Cart Items');
+    if (data) {
+    } else {
+      localStorage.setItem('Cart Items', JSON.stringify(cart.items));
+    }
+  }, [cart.items]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('Cart Items'));
+  }, []);
+
   return (
     <section className="add-cart">
       <p className="add-cart__quantity">Quantity:</p>
@@ -31,16 +64,7 @@ function AddToCart(props) {
         <Button
           text={cartBtnStatus}
           size={'regular'}
-          onClick={() => {
-            setCartBtnStatus('Added To Cart!');
-            cart.addToCart(
-              props.selectedProduct.id,
-              parseInt(props.price),
-              props.selectedProduct.imgSrc,
-              props.selectedProduct.name,
-              parseInt(quantity)
-            );
-          }}
+          onClick={checkForSelectedItem}
         />
       </div>
     </section>

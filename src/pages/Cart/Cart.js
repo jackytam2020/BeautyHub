@@ -3,6 +3,8 @@ import './Cart.scss';
 import CartRow from '../../components/CartRow/CartRow';
 import Button from '../../components/atoms/Button/Button';
 
+import axios from 'axios';
+
 import { CartContext } from '../../CartContext';
 function Cart(props) {
   const cart = useContext(CartContext);
@@ -11,6 +13,22 @@ function Cart(props) {
     (total, item) => (total += item.price * item.quantity),
     0
   );
+
+  const handleCheckout = async () => {
+    await fetch('http://localhost:8080/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ items: cart.items }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        window.location.assign(response.url);
+      });
+  };
 
   return (
     <div className="cart">
@@ -26,7 +44,7 @@ function Cart(props) {
         <p className="cart__subtotal">Subtotal</p>
         <p className="cart__price">{`$${totalPrice.toFixed(2)}`}</p>
         <div className="cart__checkout-button">
-          <Button text={'Checkout'} size={'large'} />
+          <Button text={'Checkout'} size={'large'} onClick={handleCheckout} />
         </div>
       </div>
     </div>

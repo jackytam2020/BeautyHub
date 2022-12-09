@@ -24,7 +24,7 @@ export function CartProvider({ children }) {
     return quantity;
   };
 
-  const addToCart = (id, price, img, name, quantityInput) => {
+  const addToCart = (id, price, priceID, img, name, quantityInput) => {
     const quantity = getProductQuantity(id);
 
     if (quantity === 0) {
@@ -32,6 +32,7 @@ export function CartProvider({ children }) {
         ...cartProducts,
         {
           id: id,
+          priceID: priceID,
           quantity: quantityInput,
           price: price,
           img: img,
@@ -46,6 +47,7 @@ export function CartProvider({ children }) {
                 ...product,
                 quantity: product.quantity + quantityInput,
                 price: price,
+                priceID: priceID,
                 img: img,
                 name: name,
               }

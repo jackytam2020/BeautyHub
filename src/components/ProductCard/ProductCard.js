@@ -37,7 +37,7 @@ function ProductCard(props) {
         />
         <h2 className="product-card__title">{props.name}</h2>
         <p className="product-card__price">
-          {props.metadata.variantProduct ? `From $${price}` : `$${price}`}
+          {props.metadata.size2 ? `From $${price}` : `$${price}`}
         </p>
       </Link>
     </div>
