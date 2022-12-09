@@ -12,9 +12,6 @@ function AddToCart(props) {
 
   const handleInputChange = (e) => {
     setQuantity(e.target.value);
-    props.setSelectedProduct({
-      ...props.selectedProduct,
-    });
   };
 
   //function needed for items that have multiple sizes
@@ -35,6 +32,7 @@ function AddToCart(props) {
         parseInt(quantity)
       );
       setCartBtnStatus('Added To Cart!');
+      localStorage.setItem('Cart Items', JSON.stringify(cart.items));
     }
   };
 

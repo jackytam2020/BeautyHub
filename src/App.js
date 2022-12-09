@@ -13,6 +13,7 @@ import ProductListing from './pages/ProductListing/ProductListing';
 import AboutUs from './pages/AboutUs/AboutUs';
 import FAQ from './pages/FAQ/FAQ';
 import Cart from './pages/Cart/Cart';
+import PaymentSuccess from './pages/PaymentSuccess/PaymentSuccess';
 
 import CartProvider from './CartContext';
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/success" element={<PaymentSuccess />} />
           </Routes>
           <div className="app__footer">
             <Footer />

@@ -7,6 +7,10 @@ import { HiMinus, HiPlus, HiOutlineX } from 'react-icons/hi';
 function CartRow(props) {
   const cart = useContext(CartContext);
 
+  useEffect(() => {
+    localStorage.setItem('Cart Items', JSON.stringify(cart.items));
+  }, [cart.items]);
+
   return (
     <div className="cart-row">
       <img

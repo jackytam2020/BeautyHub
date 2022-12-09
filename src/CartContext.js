@@ -7,6 +7,7 @@ export const CartContext = createContext({
   addToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
+  deleteAllItemsOnPayment: () => {},
 });
 
 export function CartProvider({ children }) {
@@ -98,12 +99,23 @@ export function CartProvider({ children }) {
         )
       );
     }
+    if (cartProducts.length === 1) {
+      localStorage.removeItem('Cart Items');
+    }
   };
 
   const deleteFromCart = (id) => {
     setCartProducts((cartProducts) =>
       cartProducts.filter((currentItem) => currentItem.id != id)
     );
+
+    if (cartProducts.length === 1) {
+      localStorage.removeItem('Cart Items');
+    }
+  };
+
+  const deleteAllItemsOnPayment = () => {
+    setCartProducts([]);
   };
 
   const contextValue = {
@@ -113,6 +125,7 @@ export function CartProvider({ children }) {
     addOneToCart,
     removeOneFromCart,
     deleteFromCart,
+    deleteAllItemsOnPayment,
   };
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>

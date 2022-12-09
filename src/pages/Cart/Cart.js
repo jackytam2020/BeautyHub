@@ -3,9 +3,8 @@ import './Cart.scss';
 import CartRow from '../../components/CartRow/CartRow';
 import Button from '../../components/atoms/Button/Button';
 
-import axios from 'axios';
-
 import { CartContext } from '../../CartContext';
+
 function Cart(props) {
   const cart = useContext(CartContext);
 
