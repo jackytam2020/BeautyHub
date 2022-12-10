@@ -2,7 +2,10 @@ import React from 'react';
 import './BrowLashes.scss';
 
 import { brows, lashes } from '../../data/services';
+import { afterCare } from '../../data/aftercare';
+
 import ServiceItem from '../../components/ServiceItem/ServiceItem';
+import DropDown from '../../components/DropDown/DropDown';
 
 function BrowLashes(props) {
   return (
@@ -52,6 +55,18 @@ function BrowLashes(props) {
           </div>
         </div>
       </main>
+
+      <section className="brow-lashes-page__after-care-section">
+        <div className="brow-lashes-page__after-care-container">
+          <h1 className="brow-lashes-page__care-header">AFTERCARE</h1>
+
+          <div className="brow-lashes-page__dropdown-list">
+            {afterCare.map((item) => (
+              <DropDown key={item} question={item} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
