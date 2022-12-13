@@ -25,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 5rem;
+    justify-content: space-between;
   }
 
   &__service-category {
@@ -109,7 +110,7 @@
     }
 
     &__services-list {
-      width: 60%;
+      width: 65%;
     }
 
     &__header,

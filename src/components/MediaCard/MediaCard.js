@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './MediaCard.scss';
+
 import Modal from 'react-modal';
 import VideoModal from '../VideoModal/VideoModal';
+import PlayIcon from '../../assets/icons/play-icon.svg';
 
 function MediaCard(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -21,7 +23,12 @@ function MediaCard(props) {
   };
 
   const videoCard = (
-    <div className="media-card__container">
+    <div
+      className="media-card__container"
+      onClick={() => {
+        setModalIsOpen(true);
+      }}
+    >
       <div className="media-card__modal">
         <VideoModal
           videoSrc={props.reelUrl}
@@ -29,7 +36,7 @@ function MediaCard(props) {
           setModalIsOpen={setModalIsOpen}
         />
       </div>
-      <button onClick={openModal}>play</button>
+      <img src={PlayIcon} className="media-card__play-icon" alt="play-icon" />
       <img
         src={props.thumbnailUrl}
         className="media-card__thumbnail"
@@ -50,9 +57,7 @@ function MediaCard(props) {
     </div>
   );
   return (
-    <div
-      className={props.size === 'large' ? 'media-card--large' : 'media-card'}
-    >
+    <div className="media-card">
       {props.type === 'picture' ? imgCard : videoCard}
     </div>
   );

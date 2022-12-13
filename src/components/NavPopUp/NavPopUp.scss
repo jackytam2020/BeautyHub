@@ -1,0 +1,52 @@
+.nav-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  &__services-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__services-menu-item {
+    display: flex;
+    font-size: 3.125rem;
+    align-items: center;
+    color: grey;
+    margin-bottom: 1.5rem;
+  }
+
+  &__menu-items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__menu-item {
+    font-size: 3.125rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__menu-book-button {
+    position: absolute;
+    bottom: 4rem;
+  }
+}

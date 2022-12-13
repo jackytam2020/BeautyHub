@@ -9,7 +9,12 @@
 
   &__header {
     font-family: 'Baskerville Bold';
-    color: rgb(248, 190, 175);
+    color: black;
+  }
+
+  &__copy,
+  &__sub-copy {
+    color: rgb(206, 123, 102);
   }
 
   &__bottom {

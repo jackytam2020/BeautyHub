@@ -11,8 +11,12 @@ function BookDetails(props) {
       <div className="book-details-page__header-copy">
         <h1 className="book-details-page__header">Booking Policy:</h1>
         <p className="book-details-page__disclaimer">
-          Cancel for free up to 12 hours ahead, otherwise you will be charged
-          30% of the service price for late cancellation or 50% for not showing
+          Cancel for free up to{' '}
+          <span className="book-details-page__bolded">12 hours</span> ahead,
+          otherwise you will be charged{' '}
+          <span className="book-details-page__bolded">30% </span>of the service
+          price for late cancellation or{' '}
+          <span className="book-details-page__bolded">50%</span> for not showing
           up.
         </p>
         <Button text={'BOOK NOW'} size={'regular'} />
@@ -20,9 +24,7 @@ function BookDetails(props) {
 
       <div className="book-details-page__media-list">
         {mediaPlayers.map((media) => {
-          return (
-            <MediaCard key={media.thumbnailUrl} {...media} size={'large'} />
-          );
+          return <MediaCard key={media.thumbnailUrl} {...media} />;
         })}
       </div>
     </div>

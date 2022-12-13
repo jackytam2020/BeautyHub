@@ -3,11 +3,12 @@
     position: fixed;
     inset: 0px;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
   }
 
   &__modal-container {
     margin: 0 auto;
-    margin-top: 10rem;
+    margin-top: 5rem;
     height: 800px;
     width: 42rem;
     position: relative;

@@ -2,6 +2,7 @@
 @use '../../styles/partials/font-faces' as *;
 
 .nav-bar {
+  display: flex;
   flex-direction: column;
   position: relative;
 
@@ -23,6 +24,12 @@
     object-fit: cover;
   }
 
+  &__nav-links {
+    p {
+      margin-right: 1rem;
+    }
+  }
+
   &__more-services {
     width: 12.5rem;
     background-color: white;
@@ -41,61 +48,6 @@
 
   &__more-services--hidden {
     display: none;
-  }
-
-  &__menu-popup {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    opacity: 1;
-    transition: visibility 0s, opacity 0.2s linear;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__menu-popup--hidden {
-    display: none;
-  }
-
-  &__menu-items {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__services-menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__services-menu-item {
-    display: flex;
-    font-size: 3.125rem;
-    align-items: center;
-    color: grey;
-    margin-bottom: 1.5rem;
-  }
-
-  &__menu-item {
-    font-size: 3.125rem;
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-  }
-
-  &__menu-book-button {
-    position: absolute;
-    bottom: 2rem;
   }
 
   &__right {

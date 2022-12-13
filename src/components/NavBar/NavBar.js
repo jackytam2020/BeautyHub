@@ -2,15 +2,19 @@ import React, { useState, useContext } from 'react';
 import './NavBar.scss';
 import Logo from '../../assets/images/logo.png';
 import Button from '../atoms/Button/Button';
-import { HiShoppingCart } from 'react-icons/hi';
+import NavPopUp from '../NavPopUp/NavPopUp';
+
 import { CartContext } from '../../CartContext';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import {
   HiMenuAlt4,
   HiOutlineX,
   HiChevronRight,
   HiChevronLeft,
+  HiShoppingCart,
 } from 'react-icons/hi';
 
 function NavBar(props) {
@@ -23,12 +27,27 @@ function NavBar(props) {
     0
   );
 
+  //disable scroll when popup menu opens
+  hamMenuOpen ? disableBodyScroll(document) : enableBodyScroll(document);
+
   return (
-    <nav className="nav-bar">
+    <nav
+      className="nav-bar"
+      onMouseLeave={() => {
+        setServicesMenuOpen(false);
+      }}
+    >
       <div className="nav-bar__container">
         <div className="nav-bar__left">
           <Link to={'/'}>
-            <img src={Logo} className="nav-bar__logo" alt="beauty et al logo" />
+            <img
+              src={Logo}
+              className="nav-bar__logo"
+              alt="beauty et al logo"
+              onMouseEnter={() => {
+                setServicesMenuOpen(false);
+              }}
+            />
           </Link>
           <ul className="nav-bar__nav-links">
             <li
@@ -37,7 +56,7 @@ function NavBar(props) {
                 setServicesMenuOpen(true);
               }}
             >
-              <a href="">Services</a>
+              <p>Services</p>
               {servicesMenuOpen ? (
                 <div
                   className="nav-bar__more-services"
@@ -60,7 +79,12 @@ function NavBar(props) {
               )}
             </li>
 
-            <li className="nav-bar__link-items">
+            <li
+              className="nav-bar__link-items"
+              onMouseEnter={() => {
+                setServicesMenuOpen(false);
+              }}
+            >
               <Link to={'/book-details'}>Book</Link>
             </li>
             <li className="nav-bar__link-items">
@@ -103,63 +127,7 @@ function NavBar(props) {
           </div>
         </div>
       </div>
-      <div
-        className={
-          hamMenuOpen ? 'nav-bar__menu-popup' : 'nav-bar__menu-popup--hidden'
-        }
-      >
-        {servicesMenuOpen ? (
-          <ul className="nav-bar__services-menu">
-            <li
-              className="nav-bar__services-menu-item"
-              onClick={() => {
-                setServicesMenuOpen(false);
-              }}
-            >
-              <HiChevronLeft />
-              <p>Back</p>
-            </li>
-            <li className="nav-bar__services-menu-item">
-              <a href="">NAIL</a>
-            </li>
-            <li className="nav-bar__services-menu-item">
-              <a href="">HAIR</a>
-            </li>
-            <li className="nav-bar__services-menu-item">
-              <a href="">BROWS & LASHES</a>
-            </li>
-          </ul>
-        ) : (
-          <ul className="nav-bar__menu-items">
-            <li
-              className="nav-bar__menu-item"
-              onClick={() => {
-                setServicesMenuOpen(true);
-              }}
-            >
-              <a>Services</a>
-              <HiChevronRight />
-            </li>
-
-            <li className="nav-bar__menu-item">
-              <a href="">Book</a>
-            </li>
-            <li className="nav-bar__menu-item">
-              <a href="">About Us</a>
-            </li>
-            <li className="nav-bar__menu-item">
-              <a href="">FAQ</a>
-            </li>
-            <li></li>
-          </ul>
-        )}
-
-        {servicesMenuOpen ? null : (
-          <div className="nav-bar__menu-book-button">
-            <Button text={'BOOK NOW'} size={'large'} />
-          </div>
-        )}
-      </div>
+      {hamMenuOpen && <NavPopUp setHamMenuOpen={setHamMenuOpen} />}
     </nav>
   );
 }

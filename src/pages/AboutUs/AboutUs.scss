@@ -3,10 +3,8 @@
 
 .about-us-page {
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   background-color: #f7f4f2;
-  object-fit: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,13 +16,13 @@
   }
 
   p {
-    padding-bottom: 1.5rem;
     line-height: 2rem;
   }
 
   ul {
     line-height: 2rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
 
