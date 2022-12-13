@@ -73,7 +73,7 @@
 
 @include small() {
   .brow-lashes-page {
-    padding: 2rem 2rem 10rem 2rem;
+    padding: 2rem 2rem 7rem 2rem;
 
     &__after-care-container {
       width: 100%;
@@ -83,7 +83,7 @@
 
 @include medium() {
   .brow-lashes-page {
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
     &__header-copy {
       width: 40%;
     }
@@ -103,7 +103,7 @@
 
 @include large() {
   .brow-lashes-page {
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
 
     &__header-copy {
       width: 50%;

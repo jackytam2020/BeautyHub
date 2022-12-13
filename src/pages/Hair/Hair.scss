@@ -54,13 +54,13 @@
 
 @include small() {
   .hair-page {
-    padding: 2rem 2rem 10rem 2rem;
+    padding: 2rem 2rem 5rem 2rem;
   }
 }
 
 @include medium() {
   .hair-page {
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
     &__header-copy {
       width: 40%;
     }
@@ -79,7 +79,7 @@
 
 @include large() {
   .hair-page {
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
     &__services-list {
       width: 60%;
     }

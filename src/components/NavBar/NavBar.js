@@ -5,8 +5,7 @@ import Button from '../atoms/Button/Button';
 import NavPopUp from '../NavPopUp/NavPopUp';
 
 import { CartContext } from '../../CartContext';
-import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import {

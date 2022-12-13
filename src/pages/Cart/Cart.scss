@@ -13,6 +13,12 @@
     color: rgb(248, 190, 175);
   }
 
+  &__cartUI-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
   &__cart-items {
     display: flex;
     flex-direction: column;
@@ -20,6 +26,11 @@
 
   &__subtotal-checkout {
     display: grid;
+  }
+
+  &__empty-message {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 

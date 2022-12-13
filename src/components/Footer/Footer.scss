@@ -12,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     width: 150px;
+    text-align: center;
   }
 
   &__column-header {
@@ -24,13 +25,25 @@
     margin-top: 2rem;
     line-height: 2rem;
   }
+
+  &__icons {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  &__social-icons-holder {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 }
 
 @include small() {
   .footer {
     flex-direction: column;
     align-items: center;
-    padding: 0rem 5rem 5rem 5rem;
+    padding: 3rem 5rem 3rem 5rem;
 
     &__column {
       margin-bottom: 2rem;
@@ -40,12 +53,12 @@
 
 @include medium() {
   .footer {
-    padding: 0rem 5rem 5rem 5rem;
+    padding: 3rem 5rem 3rem 5rem;
   }
 }
 
 @include large() {
   .footer {
-    padding: 0rem 20rem 5rem 20rem;
+    padding: 3rem 20rem 3rem 20rem;
   }
 }
