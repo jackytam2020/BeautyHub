@@ -1,15 +1,13 @@
 import React from 'react';
 import './Button.scss';
 
-function Button(props) {
-  let buttonClassname;
-
-  if (props.size === 'large') buttonClassname = 'button-large';
-  if (props.size === 'regular') buttonClassname = 'button-regular';
-
+function Button({ onClick, text, color }) {
   return (
-    <button className={buttonClassname} onClick={props.onClick}>
-      <p className="button__text">{props.text}</p>
+    <button
+      className={color === 'pink' ? 'button-pink' : 'button'}
+      onClick={onClick}
+    >
+      <p className="button__text">{text}</p>
     </button>
   );
 }

@@ -16,7 +16,7 @@ import {
   HiShoppingCart,
 } from 'react-icons/hi';
 
-function NavBar(props) {
+function NavBar({ setCartIsOpen }) {
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
 
@@ -98,14 +98,18 @@ function NavBar(props) {
           </ul>
         </div>
         <div className="nav-bar__right">
-          <Link to={'/cart'}>
-            <div className="nav-bar__cart-button">
-              <HiShoppingCart className="nav-bar__cart-icon" />
-              <p className="nav-bar__cart-counter">
-                {itemsCount > 0 && itemsCount}
-              </p>
-            </div>
-          </Link>
+          {/* <Link to={'/cart'}> */}
+          <div
+            className="nav-bar__cart-button"
+            onClick={() => {
+              setCartIsOpen(true);
+              // document.body.style.overflow = 'hidden';
+            }}
+          >
+            <HiShoppingCart className="nav-bar__cart-icon" />
+            <p className="nav-bar__cart-counter">{itemsCount}</p>
+          </div>
+          {/* </Link> */}
           <div className="nav-bar__book-button">
             <a
               target="_blank"

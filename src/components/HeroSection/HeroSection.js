@@ -19,7 +19,14 @@ function HeroSection(props) {
           <p className="hero-section__sub-copy">
             We are in between Sunglasses Hut and Oliver’s Jewellers.
           </p>
-          <Button text={'Book an Appointment'} size={'large'} />
+          <div className="hero-section__book-btn">
+            <a
+              href="https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true"
+              target="_blank"
+            >
+              <Button text={'Book an Appointment'} />
+            </a>
+          </div>
         </div>
       </div>
     </section>

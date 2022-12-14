@@ -19,7 +19,14 @@ function BookDetails(props) {
           <span className="book-details-page__bolded">50%</span> for not showing
           up.
         </p>
-        <Button text={'BOOK NOW'} size={'regular'} />
+        <div className="book-details-page__book-btn">
+          <a
+            href="https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true"
+            target="_blank"
+          >
+            <Button text={'BOOK NOW'} size={'regular'} color={'pink'} />
+          </a>
+        </div>
       </div>
 
       <div className="book-details-page__media-list">

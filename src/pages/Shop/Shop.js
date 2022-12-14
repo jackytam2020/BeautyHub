@@ -29,9 +29,11 @@ function Shop(props) {
       <h1 className="shop-page__header">AT-HOME SELF CARE</h1>
 
       <section className="shop-page__products">
-        {products.map((product) => (
-          <ProductCard key={product.product} {...product} />
-        ))}
+        <div className="shop-page__products-list">
+          {products.map((product) => (
+            <ProductCard key={product.product} {...product} />
+          ))}
+        </div>
       </section>
     </div>
   );

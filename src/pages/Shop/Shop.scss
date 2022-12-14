@@ -14,8 +14,9 @@
     font-size: 3rem;
   }
 
-  &__products {
+  &__products-list {
     display: grid;
+    max-width: 1280px;
     margin-top: 3rem;
     margin: 0 auto;
   }
@@ -30,7 +31,10 @@
     }
 
     &__products {
-      padding: 0rem 2rem 0rem 2rem;
+      padding: 2rem 2rem 0rem 2rem;
+    }
+
+    &__products-list {
       grid-template-columns: 1fr;
       row-gap: 7rem;
     }
@@ -46,7 +50,12 @@
 
     &__products {
       padding: 2rem 4rem 0rem 4rem;
+    }
+
+    &__products-list {
+      padding-top: 2rem;
       grid-template-columns: repeat(4, auto);
+      border-top: 1px solid rgb(248, 190, 175, 0.3);
       justify-content: space-between;
       column-gap: 2rem;
       row-gap: 12rem;
@@ -63,7 +72,12 @@
 
     &__products {
       padding: 2rem 4rem 0rem 4rem;
+    }
+
+    &__products-list {
       grid-template-columns: repeat(4, auto);
+      border-top: 1px solid rgb(248, 190, 175, 0.3);
+      padding-top: 2rem;
       justify-content: space-between;
       column-gap: 2rem;
       row-gap: 10rem;

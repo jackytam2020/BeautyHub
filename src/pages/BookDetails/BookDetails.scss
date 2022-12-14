@@ -37,6 +37,10 @@
   &__bolded {
     font-weight: 700;
   }
+
+  &__book-btn {
+    width: 8rem;
+  }
 }
 
 @include small() {

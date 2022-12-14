@@ -21,6 +21,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__book-btn {
+    width: 14rem;
+  }
 }
 
 @include small() {

@@ -63,6 +63,7 @@
 
   &__cart-counter {
     font-size: 1.3rem;
+    margin-left: 0.5rem;
   }
 
   &__cart-icon {
@@ -152,6 +153,10 @@
 
     &__menu-popup {
       display: none;
+    }
+
+    &__book-button {
+      width: 8rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './Cart.scss';
 import CartRow from '../../components/CartRow/CartRow';
 import Button from '../../components/atoms/Button/Button';
@@ -36,7 +36,9 @@ function Cart(props) {
         You have nothing in your shopping cart.
       </p>
       <Link to={'/shop'}>
-        <Button text={'Continue Shopping'} size={'large'} />
+        <div className="cart__btn">
+          <Button text={'Continue Shopping'} color={'pink'} />
+        </div>
       </Link>
     </div>
   );
@@ -52,7 +54,7 @@ function Cart(props) {
         <p className="cart__subtotal">Subtotal</p>
         <p className="cart__price">{`$${totalPrice.toFixed(2)}`}</p>
         <div className="cart__checkout-button">
-          <Button text={'Checkout'} size={'large'} onClick={handleCheckout} />
+          <Button text={'Checkout'} color={'pink'} onClick={handleCheckout} />
         </div>
       </div>
     </div>

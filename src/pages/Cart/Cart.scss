@@ -32,6 +32,10 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+
+  &__btn {
+    width: 12rem;
+  }
 }
 
 @include small() {
@@ -67,7 +71,7 @@
     padding: 10rem 4rem 5rem 4rem;
 
     &__subtotal-checkout {
-      width: 40%;
+      width: 100%;
       grid-template-columns: 1fr 1fr;
       align-self: flex-end;
       justify-content: space-between;

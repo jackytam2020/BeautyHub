@@ -51,11 +51,13 @@ function AddToCart(props) {
           className="add-cart__quantity-input"
           onChange={handleInputChange}
         ></input>
-        <Button
-          text={cartBtnStatus}
-          size={'regular'}
-          onClick={checkForSelectedItem}
-        />
+        <div className="add-cart__btn">
+          <Button
+            text={cartBtnStatus}
+            color={'pink'}
+            onClick={checkForSelectedItem}
+          />
+        </div>
       </div>
     </section>
   );
