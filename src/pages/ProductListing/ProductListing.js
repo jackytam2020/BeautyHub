@@ -129,6 +129,7 @@ function ProductListing(props) {
 
   useEffect(() => {
     getProduct();
+    window.scrollTo(0,0)
   }, []);
   return (
     <div className="product-listing">

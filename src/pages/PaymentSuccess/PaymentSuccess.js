@@ -12,7 +12,7 @@ function PaymentSuccess(props) {
   }, []);
   return (
     <div className="payment-success">
-      <h1 className="payment-success__message">Thank you for you purchase!</h1>
+      <h1 className="payment-success__message">Thank you for your purchase!</h1>
     </div>
   );
 }
