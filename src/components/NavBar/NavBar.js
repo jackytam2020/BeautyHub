@@ -27,9 +27,6 @@ function NavBar({ setCartIsOpen }) {
     0
   );
 
-  //disable scroll when popup menu opens
-  // hamMenuOpen ? disableBodyScroll(document) : enableBodyScroll(document);
-
   let hamMenuRef = useRef();
 
   useEffect(() => {
@@ -136,7 +133,7 @@ function NavBar({ setCartIsOpen }) {
                 setHamMenuOpen(!hamMenuOpen);
               }}
             >
-              {hamMenuOpen ? <HiOutlineX /> : <HiMenuAlt4 />}
+              <HiMenuAlt4 />
             </div>
           </div>
         </div>

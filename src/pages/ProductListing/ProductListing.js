@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ProductListing.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { HiChevronRight, HiChevronLeft } from 'react-icons/hi';
 import axios from 'axios';
+
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
+import './ProductListing.scss';
 
 function ProductListing(props) {
   const params = useParams();
@@ -39,7 +41,6 @@ function ProductListing(props) {
       }
     );
 
-    console.log(response.data);
     setSelectedProduct({
       ...selectedProduct,
       id: response.data.id,
@@ -124,11 +125,22 @@ function ProductListing(props) {
     getPrice(response.data.default_price);
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     getProduct();
   }, []);
   return (
     <div className="product-listing">
+      <div
+        className="product-listing__previous-page"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        <HiChevronLeft className="product-listing__back-btn" />
+        <p>Back to Shop</p>
+      </div>
       <section className="product-listing__container">
         <img
           src={selectedProduct.imgSrc}

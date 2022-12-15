@@ -31,7 +31,7 @@ function Shop(props) {
       <section className="shop-page__products">
         <div className="shop-page__products-list">
           {products.map((product) => (
-            <ProductCard key={product.product} {...product} />
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </section>

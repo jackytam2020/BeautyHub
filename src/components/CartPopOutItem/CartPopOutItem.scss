@@ -24,7 +24,8 @@
   }
 
   &__product-img {
-    width: 80px;
+    width: 60px;
+    max-width: 60px;
     height: 80px;
     object-fit: cover;
   }
@@ -36,5 +37,6 @@
   &__cancel-btn {
     height: 1.5rem;
     width: 1.5rem;
+    cursor: pointer;
   }
 }

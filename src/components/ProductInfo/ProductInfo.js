@@ -3,24 +3,29 @@ import './ProductInfo.scss';
 import AddToCart from '../atoms/AddToCart/AddToCart';
 import SizeSelector from '../atoms/SizeSelector/SizeSelector';
 
-function ProductInfo(props) {
+function ProductInfo({
+  selectedProduct,
+  price,
+  getProductByDropdown,
+  setSelectedProduct,
+}) {
   let extraDetails;
 
-  if (props.selectedProduct.for) {
+  if (selectedProduct.for) {
     extraDetails = (
       <div className="product-info__extra-description">
-        {props.selectedProduct.where && <p>Where:</p>}
-        <p>{props.selectedProduct.where}</p>
-        {props.selectedProduct.how && <p>How:</p>}
-        <p>{props.selectedProduct.how}</p>
+        {selectedProduct.where && <p>Where:</p>}
+        <p>{selectedProduct.where}</p>
+        {selectedProduct.how && <p>How:</p>}
+        <p>{selectedProduct.how}</p>
         <p>When:</p>
-        <p>{props.selectedProduct.when}</p>
+        <p>{selectedProduct.when}</p>
         <p>For:</p>
-        <p>{props.selectedProduct.for}</p>
+        <p>{selectedProduct.for}</p>
       </div>
     );
   }
-  if (props.selectedProduct.name === 'Redken One United Benefit Treatment') {
+  if (selectedProduct.name === 'Redken One United Benefit Treatment') {
     extraDetails = (
       <div className="product-info__extra-description">
         <p className="product-info__bolded-header">BENEFITS</p>
@@ -65,7 +70,7 @@ function ProductInfo(props) {
     );
   }
 
-  if (props.selectedProduct.name === 'Redken Fashion Work 12 Hairspray') {
+  if (selectedProduct.name === 'Redken Fashion Work 12 Hairspray') {
     extraDetails = (
       <div className="product-info__extra-description">
         <p className="product-info__bolded-header">BENEFITS</p>
@@ -79,7 +84,7 @@ function ProductInfo(props) {
     );
   }
 
-  if (props.selectedProduct.name === 'Footlogix "At Home" Footfile') {
+  if (selectedProduct.name === 'Footlogix "At Home" Footfile') {
     extraDetails = (
       <div className="product-info__extra-description">
         <p className="product-info__long-description">
@@ -121,7 +126,7 @@ function ProductInfo(props) {
     );
   }
 
-  if (props.selectedProduct.name === 'OLAPLEX Nº.3 HAIR PERFECTOR') {
+  if (selectedProduct.name === 'OLAPLEX Nº.3 HAIR PERFECTOR') {
     extraDetails = (
       <div className="product-info__extra-description">
         <p className="product-info__pro-tip">
@@ -147,10 +152,10 @@ function ProductInfo(props) {
     <div className="product-info__directional-use">
       <h2 className="product-info__directions">Directions</h2>
       <ol className="product-info__ordered-list">
-        <li>{props.selectedProduct.directionalUse1}</li>
-        <li>{props.selectedProduct.directionalUse2}</li>
-        <li>{props.selectedProduct.directionalUse3}</li>
-        <li>{props.selectedProduct.directionalUse4}</li>
+        <li>{selectedProduct.directionalUse1}</li>
+        <li>{selectedProduct.directionalUse2}</li>
+        <li>{selectedProduct.directionalUse3}</li>
+        <li>{selectedProduct.directionalUse4}</li>
       </ol>
     </div>
   );
@@ -160,47 +165,45 @@ function ProductInfo(props) {
 
   let sizes = [];
 
-  if (props.selectedProduct.size1) {
-    sizes.push(props.selectedProduct.size1, props.selectedProduct.size2);
+  if (selectedProduct.size1) {
+    sizes.push(selectedProduct.size1, selectedProduct.size2);
   }
 
   return (
     <div className="product-info">
-      <p className="product-info__header">{`AT-HOME SELF CARE - ${props.selectedProduct.name}`}</p>
-      <h1 className="product-info__name">{props.selectedProduct.name}</h1>
+      <p className="product-info__header">{`AT-HOME SELF CARE - ${selectedProduct.name}`}</p>
+      <h1 className="product-info__name">{selectedProduct.name}</h1>
       <p className="product-info__price">
         {selectedDropDownItem === 'Select a size' &&
-        props.selectedProduct.variantProduct
-          ? `From $${props.price}`
-          : `$${props.price}`}
+        selectedProduct.variantProduct
+          ? `From $${price}`
+          : `$${price}`}
       </p>
-      {props.selectedProduct.tagline && (
-        <h2 className="product-info__tagline">
-          {props.selectedProduct.tagline}
-        </h2>
+      {selectedProduct.tagline && (
+        <h2 className="product-info__tagline">{selectedProduct.tagline}</h2>
       )}
-      {props.selectedProduct.description && (
+      {selectedProduct.description && (
         <p className="product-info__description">
-          {props.selectedProduct.description}
+          {selectedProduct.description}
         </p>
       )}
       {extraDetails}
-      {props.selectedProduct.size1 && (
+      {selectedProduct.size1 && (
         <SizeSelector
           sizes={sizes}
-          getProductByDropdown={props.getProductByDropdown}
-          selectedProduct={props.selectedProduct}
+          getProductByDropdown={getProductByDropdown}
+          selectedProduct={selectedProduct}
           selectedDropDownItem={selectedDropDownItem}
           setSelectedDropDownItem={setSelectedDropDownItem}
         />
       )}
       <AddToCart
-        selectedProduct={props.selectedProduct}
-        setSelectedProduct={props.setSelectedProduct}
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
         selectedDropDownItem={selectedDropDownItem}
-        price={props.price}
+        price={price}
       />
-      {props.selectedProduct.directionalUse1 && directionalUse}
+      {selectedProduct.directionalUse1 && directionalUse}
     </div>
   );
 }

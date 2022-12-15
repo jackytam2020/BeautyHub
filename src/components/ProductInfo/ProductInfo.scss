@@ -4,6 +4,7 @@
 @use '../../styles/partials/breakpoints' as *;
 
 .product-info {
+  padding-left: 0.1rem;
   &__name {
     color: rgb(238, 190, 180);
     font-family: 'Baskerville Bold';

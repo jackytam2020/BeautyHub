@@ -1,18 +1,16 @@
 import React from 'react';
 import './ServiceItem.scss';
 
-function ServiceItem(props) {
+function ServiceItem({ serviceName, price, description, disclaimer }) {
   return (
     <div className="service-item">
       <div className="service-item__item-name-price">
-        <p className="service-item__item-name">{props.serviceName}</p>
-        <p className="service-item__item-price">{`$${props.price}`}</p>
+        <p className="service-item__item-name">{serviceName}</p>
+        <p className="service-item__item-price">{`$${price}`}</p>
       </div>
-      <p className="service-item__description">{props.description}</p>
-      {props.disclaimer && (
-        <p className="service-item__disclaimer">{props.disclaimer}</p>
-      )}
-      {props.serviceName === 'K18 Pro Hair Treatment' && (
+      <p className="service-item__description">{description}</p>
+      {disclaimer && <p className="service-item__disclaimer">{disclaimer}</p>}
+      {serviceName === 'K18 Pro Hair Treatment' && (
         <div className="service-item__extended-description">
           <p>*Take home 5ml Hair Mask included in this service</p>
           <p>

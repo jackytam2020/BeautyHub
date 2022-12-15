@@ -3,13 +3,13 @@ import './ProductCard.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function ProductCard(props) {
+function ProductCard({ default_price, id, images, name, metadata }) {
   const [price, setPrice] = useState('');
   const stripeKey = process.env.REACT_APP_STRIPE_SECRET_KEY;
 
   const getPrice = async () => {
     const response = await axios.get(
-      `https://api.stripe.com/v1/prices/${props.default_price}`,
+      `https://api.stripe.com/v1/prices/${default_price}`,
       {
         headers: { authorization: `bearer ${stripeKey}` },
       }
@@ -29,15 +29,11 @@ function ProductCard(props) {
 
   return (
     <div className="product-card">
-      <Link to={`/product-listing/${props.id}`}>
-        <img
-          src={props.images[0]}
-          className="product-card__image"
-          alt={props.name}
-        />
-        <h2 className="product-card__title">{props.name}</h2>
+      <Link to={`/product-listing/${id}`}>
+        <img src={images[0]} className="product-card__image" alt={name} />
+        <h2 className="product-card__title">{name}</h2>
         <p className="product-card__price">
-          {props.metadata.size2 ? `From $${price}` : `$${price}`}
+          {metadata.size2 ? `From $${price}` : `$${price}`}
         </p>
       </Link>
     </div>
