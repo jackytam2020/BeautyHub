@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './NavPopUp.scss';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
@@ -10,13 +10,54 @@ import {
   HiChevronRight,
   HiChevronLeft,
 } from 'react-icons/hi';
+import { FaHome } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-function NavPopUp({ setHamMenuOpen }) {
+function NavPopUp({ hamMenuOpen, setHamMenuOpen, hamMenuRef }) {
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+
+  const variants = {
+    show: { transform: 'translateX(0em)', opacity: 1 },
+    hide: { transform: 'translateX(5em)', opacity: 0 },
+  };
+
   return (
-    <div className="nav-popup">
+    <div
+      className={hamMenuOpen ? 'nav-popup' : 'nav-popup--closed'}
+      ref={hamMenuRef}
+    >
+      <div className="nav-popup__top-header">
+        <Link to={'/'}>
+          <FaHome
+            className="nav-popup__logo"
+            onClick={() => {
+              setHamMenuOpen(false);
+            }}
+          />
+        </Link>
+        <HiOutlineX
+          className="nav-popup__exit-icon"
+          onClick={() => {
+            setHamMenuOpen(false);
+          }}
+        />
+      </div>
       {servicesMenuOpen ? (
-        <ul className="nav-popup__services-menu">
+        <motion.ul
+          className="nav-popup__services-menu"
+          animate={servicesMenuOpen ? 'show' : 'hide'}
+          variants={{
+            show: {
+              ...variants.show,
+              transition: { delay: 0.4, duration: 0.3 },
+            },
+            hide: {
+              ...variants.hide,
+              transition: { delay: 0.1, duration: 0.05 },
+            },
+          }}
+          initial={false}
+        >
           <li
             className="nav-popup__services-menu-item"
             onClick={() => {
@@ -50,57 +91,117 @@ function NavPopUp({ setHamMenuOpen }) {
           >
             <Link to={'/brow-lashes'}>BROW & LASHES</Link>
           </li>
-        </ul>
+        </motion.ul>
       ) : (
         <ul className="nav-popup__menu-items">
-          <li
+          <motion.li
             className="nav-popup__menu-item"
+            animate={hamMenuOpen ? 'show' : 'hide'}
+            variants={{
+              show: {
+                ...variants.show,
+                transition: { delay: 0.3, duration: 0.2 },
+              },
+              hide: {
+                ...variants.hide,
+                transition: { delay: 0.1, duration: 0.05 },
+              },
+            }}
+            initial={false}
             onClick={() => {
               setServicesMenuOpen(true);
             }}
           >
             <a>Services</a>
             <HiChevronRight />
-          </li>
+          </motion.li>
 
-          <li
+          <motion.li
             className="nav-popup__menu-item"
+            animate={hamMenuOpen ? 'show' : 'hide'}
+            variants={{
+              show: {
+                ...variants.show,
+                transition: { delay: 0.4, duration: 0.3 },
+              },
+              hide: {
+                ...variants.hide,
+                transition: { delay: 0.1, duration: 0.05 },
+              },
+            }}
+            initial={false}
             onClick={() => {
               setHamMenuOpen(false);
             }}
           >
             <Link to={'/book-details'}>Book</Link>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             className="nav-popup__menu-item"
+            animate={hamMenuOpen ? 'show' : 'hide'}
+            variants={{
+              show: {
+                ...variants.show,
+                transition: { delay: 0.5, duration: 0.4 },
+              },
+              hide: {
+                ...variants.hide,
+                transition: { delay: 0.1, duration: 0.05 },
+              },
+            }}
+            initial={false}
             onClick={() => {
               setHamMenuOpen(false);
             }}
           >
             <Link to={'/shop'}>Shop</Link>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             className="nav-popup__menu-item"
+            animate={hamMenuOpen ? 'show' : 'hide'}
+            variants={{
+              show: {
+                ...variants.show,
+                transition: { delay: 0.6, duration: 0.5 },
+              },
+              hide: {
+                ...variants.hide,
+                transition: { delay: 0.1, duration: 0.05 },
+              },
+            }}
+            initial={false}
             onClick={() => {
               setHamMenuOpen(false);
             }}
           >
             <Link to={'/about-us'}>About Us</Link>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             className="nav-popup__menu-item"
+            animate={hamMenuOpen ? 'show' : 'hide'}
+            variants={{
+              show: {
+                ...variants.show,
+                transition: { delay: 0.7, duration: 0.6 },
+              },
+              hide: {
+                ...variants.hide,
+                transition: { delay: 0.1, duration: 0.05 },
+              },
+            }}
+            initial={false}
             onClick={() => {
               setHamMenuOpen(false);
             }}
           >
             <Link to={'/faq'}>FAQ</Link>
-          </li>
+          </motion.li>
         </ul>
       )}
 
       <div className="nav-popup__menu-book-button">
         <Button
-          size={'large'}
+          color={'pink'}
           text={'Book Now'}
           onClick={() => {
             window.open(

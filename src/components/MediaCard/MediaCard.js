@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MediaCard.scss';
 
 import Modal from 'react-modal';
@@ -7,8 +7,6 @@ import PlayIcon from '../../assets/icons/play-icon.svg';
 
 function MediaCard(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const refOne = useRef(null);
 
   const openModal = () => {
     setModalIsOpen(true);

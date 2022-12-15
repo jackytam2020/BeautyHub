@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import './NavBar.scss';
 import Logo from '../../assets/images/logo.png';
 import Button from '../atoms/Button/Button';
@@ -15,6 +15,7 @@ import {
   HiChevronLeft,
   HiShoppingCart,
 } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 function NavBar({ setCartIsOpen }) {
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
@@ -27,7 +28,20 @@ function NavBar({ setCartIsOpen }) {
   );
 
   //disable scroll when popup menu opens
-  hamMenuOpen ? disableBodyScroll(document) : enableBodyScroll(document);
+  // hamMenuOpen ? disableBodyScroll(document) : enableBodyScroll(document);
+
+  let hamMenuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside, true);
+  }, []);
+
+  //close cart popout when clicked outside
+  const handleClickOutside = (e) => {
+    if (!hamMenuRef.current.contains(e.target)) {
+      setHamMenuOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -98,18 +112,15 @@ function NavBar({ setCartIsOpen }) {
           </ul>
         </div>
         <div className="nav-bar__right">
-          {/* <Link to={'/cart'}> */}
           <div
             className="nav-bar__cart-button"
             onClick={() => {
               setCartIsOpen(true);
-              // document.body.style.overflow = 'hidden';
             }}
           >
             <HiShoppingCart className="nav-bar__cart-icon" />
             <p className="nav-bar__cart-counter">{itemsCount}</p>
           </div>
-          {/* </Link> */}
           <div className="nav-bar__book-button">
             <a
               target="_blank"
@@ -130,7 +141,11 @@ function NavBar({ setCartIsOpen }) {
           </div>
         </div>
       </div>
-      {hamMenuOpen && <NavPopUp setHamMenuOpen={setHamMenuOpen} />}
+      <NavPopUp
+        setHamMenuOpen={setHamMenuOpen}
+        hamMenuOpen={hamMenuOpen}
+        hamMenuRef={hamMenuRef}
+      />
     </nav>
   );
 }

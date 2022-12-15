@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './CartPopOut.scss';
 import Button from '../atoms/Button/Button';
 import CartPopOutItem from '../CartPopOutItem/CartPopOutItem';
@@ -6,8 +6,16 @@ import CartPopOutItem from '../CartPopOutItem/CartPopOutItem';
 import { CartContext } from '../../CartContext';
 import { Link } from 'react-router-dom';
 
-function CartPopOut({ setCartIsOpen }) {
+function CartPopOut({ setCartIsOpen, cartIsOpen, cartRef }) {
   const cart = useContext(CartContext);
+
+  useEffect(() => {
+    if (window.screen.width < 768 && cartIsOpen === true) {
+      document.body.style.overflow = 'hidden';
+    } else if (cartIsOpen === false) {
+      document.body.style.overflow = 'auto';
+    }
+  }, [cartIsOpen]);
 
   const totalPrice = cart.items.reduce(
     (total, item) => (total += item.price * item.quantity),
@@ -65,7 +73,11 @@ function CartPopOut({ setCartIsOpen }) {
   );
 
   return (
-    <div className="cart-popout">
+    <div
+      className={cartIsOpen ? 'cart-popout--active' : 'cart-popout'}
+      ref={cartRef}
+    >
+      {/* <div className="cart-popout"> */}
       {cart.items.length === 0 ? emptyCartUI : cartUI}
     </div>
   );
