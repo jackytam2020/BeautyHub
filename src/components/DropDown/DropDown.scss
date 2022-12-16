@@ -1,0 +1,57 @@
+@use '../../styles/partials/font-faces' as *;
+
+.drop-down {
+  width: 100%;
+  border-bottom: 1px solid grey;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__question-holder {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__question {
+    font-size: 1.5rem;
+    font-family: 'Baskerville Bold';
+  }
+
+  &__content--closed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  &__content--opened {
+    height: auto;
+    max-height: 550px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  &__menu-icons {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &__content {
+    line-height: 2.5rem;
+    margin-top: 1rem;
+  }
+
+  &__faq-content {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+
+    p {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__bolded {
+    font-weight: 700;
+  }
+}

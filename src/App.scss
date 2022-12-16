@@ -1,0 +1,37 @@
+@use './styles/partials/_resets.scss' as *;
+
+.app {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__pop-up-container {
+    z-index: 99;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: white;
+}

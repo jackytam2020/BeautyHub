@@ -1,0 +1,86 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+@use '../../styles/partials/breakpoints' as *;
+
+.product-info {
+  padding-left: 0.1rem;
+  &__name {
+    color: rgb(238, 190, 180);
+    font-family: 'Baskerville Bold';
+  }
+
+  &__bolded-header {
+    font-weight: 700;
+  }
+
+  &__tagline {
+    font-size: 2.5rem;
+    font-family: 'Baskerville Bold';
+  }
+
+  &__price {
+    margin-top: 1rem;
+  }
+
+  &__description {
+    margin-top: 2rem;
+  }
+
+  &__extra-description {
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  &__long-description {
+    margin-bottom: 1rem;
+  }
+
+  &__directional-use {
+    margin-top: 2rem;
+  }
+
+  &__directions {
+    color: rgb(238, 190, 180);
+    font-family: 'Baskerville Bold';
+    font-size: 2.5rem;
+  }
+
+  &__unordered-list {
+    line-height: 2rem;
+  }
+
+  &__ordered-list {
+    line-height: 2.5rem;
+  }
+}
+
+@include small() {
+  .product-info {
+    &__header {
+      display: none;
+    }
+    &__name {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .product-info {
+    &__name {
+      margin-top: 4rem;
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@include large() {
+  .product-info {
+    &__name {
+      margin-top: 4rem;
+      font-size: 3.5rem;
+    }
+  }
+}

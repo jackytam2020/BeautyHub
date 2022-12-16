@@ -1,0 +1,64 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #f7f4f2;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    text-align: center;
+  }
+
+  &__column-header {
+    font-family: 'Baskerville Bold';
+    font-size: 1.5rem;
+  }
+
+  &__column-content {
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 2rem;
+  }
+
+  &__icons {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  &__social-icons-holder {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+@include small() {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 5rem 3rem 5rem;
+
+    &__column {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .footer {
+    padding: 3rem 5rem 3rem 5rem;
+  }
+}
+
+@include large() {
+  .footer {
+    padding: 3rem 20rem 3rem 20rem;
+  }
+}

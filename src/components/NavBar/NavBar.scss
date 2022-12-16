@@ -1,0 +1,163 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/font-faces' as *;
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    z-index: 2;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    object-fit: cover;
+  }
+
+  &__nav-links {
+    p {
+      margin-right: 1rem;
+    }
+  }
+
+  &__more-services {
+    width: 12.5rem;
+    background-color: white;
+    position: absolute;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem 0rem 1rem;
+
+    span {
+      padding-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__more-services--hidden {
+    display: none;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cart-button {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+
+  &__cart-counter {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+  }
+
+  &__cart-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+@include small() {
+  .nav-bar {
+    &__container {
+      padding: 2rem 2rem 0rem 2rem;
+    }
+
+    &__logo {
+      width: 6.25rem;
+      height: 2rem;
+    }
+
+    &__book-button {
+      display: none;
+    }
+
+    &__nav-links {
+      display: none;
+    }
+
+    &__menu-item,
+    &__services-menu-item {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include medium() {
+  .nav-bar {
+    &__container {
+      padding: 4rem 4rem 0rem 4rem;
+    }
+
+    &__logo {
+      width: 6.25rem;
+      height: 2rem;
+    }
+
+    &__book-button {
+      display: none;
+    }
+
+    &__nav-links {
+      display: none;
+    }
+  }
+}
+
+@include large() {
+  .nav-bar {
+    &__container {
+      padding: 2rem 4rem 0rem 4rem;
+    }
+
+    &__logo {
+      width: 10rem;
+      height: 3.1rem;
+    }
+    &__book-button {
+      display: block;
+    }
+
+    &__nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    &__link-items > a {
+      color: black;
+      padding-right: 1rem;
+    }
+
+    &__services-link {
+      position: relative;
+    }
+
+    &__hamburger-menu {
+      display: none;
+    }
+
+    &__menu-popup {
+      display: none;
+    }
+
+    &__book-button {
+      width: 8rem;
+    }
+  }
+}

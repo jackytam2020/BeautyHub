@@ -1,0 +1,38 @@
+@use '../../styles/partials/font-faces' as *;
+
+.service-item {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  &__item-name-price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item-name,
+  &__item-price {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  &__description {
+    padding-top: 1rem;
+  }
+
+  &__disclaimer {
+    margin-top: 1rem;
+  }
+
+  &__extended-description {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      line-height: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use '../../../styles/partials/breakpoints' as *;
+@use '../../../styles/partials/font-faces' as *;
+
+.container {
+  margin-top: 1rem;
+}
+
+.size-selector {
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  cursor: pointer;
+
+  &__drop-icon {
+    cursor: pointer;
+  }
+
+  &__drop-area--closed {
+    height: 0px;
+    transition: 0.2s;
+    padding-left: 1rem;
+    overflow: hidden;
+  }
+
+  &__drop-area--active {
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 7px 16px -2px rgba(0, 0, 0, 0.54);
+    transition: 0.2s;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+  }
+
+  &__dropdown-item {
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+}

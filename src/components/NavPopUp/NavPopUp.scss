@@ -1,0 +1,66 @@
+@use '../../styles/partials/breakpoints' as *;
+
+.nav-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: white;
+  z-index: 99;
+  transition: 0.5s ease-in-out;
+  padding: 1rem 1rem 1rem 1rem;
+  overflow: hidden;
+
+  &__top-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__exit-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__menu-items,
+  &__services-menu {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    row-gap: 0.5rem;
+  }
+
+  &__menu-item,
+  &__services-menu-item {
+    font-size: 1.2rem;
+    display: flex;
+    cursor: pointer;
+    font-weight: 400;
+  }
+
+  &__menu-book-button {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+.nav-popup--closed {
+  @extend .nav-popup;
+  right: -100%;
+}
+
+@include small() {
+  .nav-popup {
+    width: 40%;
+  }
+}
