@@ -1,6 +1,6 @@
-## Beauty Et Al
+## BeautyHub
 
-The official e-commerce and booking website for Beauty Et Al
+The official e-commerce and booking website for BeautyHub
 
 ![Untitled](https://user-images.githubusercontent.com/43556396/209216382-0c87fb82-fd21-45a4-8c94-c59340ec59bd.png)
 
@@ -8,7 +8,7 @@ The official e-commerce and booking website for Beauty Et Al
 
 ### Description
 
-Beauty Et Al is a beauty salon based in downtown Toronto. This repository is a website revamp of the original business website for Beauty Et Al. It is a complete redesign of the frontend UI and is also now connected to a storefront using Stripe. The use of Stripe in this project populates the store page and allows users to check out and buy products.
+BeautyHub is a digital e-commerce that sells beauty products through a user-friendly front-end interface that provides a seamless shopping experience. The store is populated by a storefront using Stripe, enabling users to effortlessly explore the product range, complete their purchases, and enjoy a secure checkout process.
 
 You can view the backend API repo [here](https://github.com/jackytam2020/beauty-et-al-api)
 
