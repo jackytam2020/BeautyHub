@@ -57,7 +57,7 @@ function Hair(props) {
 
           <p className="hair-page__booking-information">
             * if you have any questions or concerns regarding booking please do
-            not hesitate to contact us at hello@beautyetal.ca to avoid
+            not hesitate to contact us at hello@beautyhub.ca to avoid
             disappointment!
           </p>
           <p className="hair-page__booking-information">

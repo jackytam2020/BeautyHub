@@ -20,11 +20,8 @@
     align-items: center;
   }
 
-  &__logo {
-    object-fit: cover;
-  }
-
   &__nav-links {
+    cursor: pointer;
     p {
       margin-right: 1rem;
     }
@@ -79,11 +76,6 @@
       padding: 2rem 2rem 0rem 2rem;
     }
 
-    &__logo {
-      width: 6.25rem;
-      height: 2rem;
-    }
-
     &__book-button {
       display: none;
     }
@@ -105,11 +97,6 @@
       padding: 4rem 4rem 0rem 4rem;
     }
 
-    &__logo {
-      width: 6.25rem;
-      height: 2rem;
-    }
-
     &__book-button {
       display: none;
     }
@@ -126,10 +113,6 @@
       padding: 2rem 4rem 0rem 4rem;
     }
 
-    &__logo {
-      width: 10rem;
-      height: 3.1rem;
-    }
     &__book-button {
       display: block;
     }

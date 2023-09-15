@@ -15,7 +15,7 @@ function Cart(props) {
   );
 
   const handleCheckout = async () => {
-    await fetch('http://localhost:8080/checkout', {
+    await fetch('https://beautyhub-api.onrender.com/checkout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -34,7 +34,7 @@ function AboutUs(props) {
         </ul>
         <p>
           If you have any special accommodations, please do not hesitate to
-          reach out to us at hello@beautyetal.ca
+          reach out to us at hello@beautyhub.ca
         </p>
         <p>Thank you for visiting and we hope to see you soon! </p>
         <p> - beauty et al. </p>

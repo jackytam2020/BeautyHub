@@ -46,6 +46,7 @@ function MediaCard({ reelUrl, thumbnailUrl, alt, type }) {
       </a>
     </div>
   );
+
   return (
     <div className="media-card">{type === 'picture' ? imgCard : videoCard}</div>
   );

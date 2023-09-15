@@ -60,7 +60,6 @@ function App() {
               path="/product-listing/:productID"
               element={<ProductListing />}
             />
-            <Route path="/book-details" element={<BookDetails />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cart" element={<Cart />} />

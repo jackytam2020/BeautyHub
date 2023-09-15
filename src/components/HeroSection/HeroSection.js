@@ -13,17 +13,13 @@ function HeroSection(props) {
       <div className="hero-section__bottom">
         <div className="hero-section__copy-container">
           <p className="hero-section__copy">
-            Your center of rest and relaxation is located at 86 Yorkville Ave.
-            2nd FLR.
+            Your center of rest and relaxation is located at 162 Cumberland St.
           </p>
           <p className="hero-section__sub-copy">
             We are in between Sunglasses Hut and Oliver’s Jewellers.
           </p>
           <div className="hero-section__book-btn">
-            <a
-              href="https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true"
-              target="_blank"
-            >
+            <a href="">
               <Button text={'Book an Appointment'} />
             </a>
           </div>

@@ -9,7 +9,7 @@ function Footer(props) {
       <div className="footer__column">
         <h3 className="footer__column-header">Location</h3>
         <p className="footer__column-content">
-          86 Yorkville Ave. 2nd Flr. Toronto, ON. M5R 1B9
+          162 Cumberland St, Toronto, ON. M5R 3N5
         </p>
       </div>
       <div className="footer__column">
@@ -23,16 +23,16 @@ function Footer(props) {
       <div className="footer__column">
         <h3 className="footer__column-header">Contact</h3>
         <p className="footer__column-content">
-          hello@beautyetal.ca (647) 977-9187
+          hello@beautyhub.ca (647) 937-3642
         </p>
         <div className="footer__social-icons-holder">
-          <a href="https://www.facebook.com/yorkville.beauty/">
+          <a href="">
             <FaFacebookF className="footer__icons" />
           </a>
-          <a href="https://www.instagram.com/yorkville.beauty/">
+          <a href="">
             <FaInstagram className="footer__icons" />
           </a>
-          <a href="mailto:hello@beautyetal.ca">
+          <a href="hello@beautyhub.ca">
             <TfiEmail className="footer__icons" />
           </a>
         </div>

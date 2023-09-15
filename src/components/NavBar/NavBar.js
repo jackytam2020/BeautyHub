@@ -50,14 +50,15 @@ function NavBar({ setCartIsOpen }) {
       <div className="nav-bar__container">
         <div className="nav-bar__left">
           <Link to={'/'}>
-            <img
+            {/* <img
               src={Logo}
               className="nav-bar__logo"
               alt="beauty et al logo"
               onMouseEnter={() => {
                 setServicesMenuOpen(false);
               }}
-            />
+            /> */}
+            <h1 className="nav-bar__logo">BeautyHub</h1>
           </Link>
           <ul className="nav-bar__nav-links">
             <li
@@ -95,9 +96,6 @@ function NavBar({ setCartIsOpen }) {
                 setServicesMenuOpen(false);
               }}
             >
-              <Link to={'/book-details'}>Book</Link>
-            </li>
-            <li className="nav-bar__link-items">
               <Link to={'/shop'}>Shop</Link>
             </li>
             <li className="nav-bar__link-items">
@@ -119,10 +117,7 @@ function NavBar({ setCartIsOpen }) {
             <p className="nav-bar__cart-counter">{itemsCount}</p>
           </div>
           <div className="nav-bar__book-button">
-            <a
-              target="_blank"
-              href="https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true"
-            >
+            <a href="">
               <Button text={'BOOK NOW'} size={'regular'} />
             </a>
           </div>
