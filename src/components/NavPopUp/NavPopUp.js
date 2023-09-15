@@ -200,16 +200,7 @@ function NavPopUp({ hamMenuOpen, setHamMenuOpen, hamMenuRef }) {
       )}
 
       <div className="nav-popup__menu-book-button">
-        <Button
-          color={'pink'}
-          text={'Book Now'}
-          onClick={() => {
-            window.open(
-              'https://www.fresha.com/a/beauty-et-al-toronto-86-yorkville-avenue-lw9w7mpl/booking?menu=true&dppub=true',
-              '_blank'
-            );
-          }}
-        />
+        <Button color={'pink'} text={'Book Now'} />
       </div>
     </div>
   );
