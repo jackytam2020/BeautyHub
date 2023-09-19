@@ -145,7 +145,7 @@ function DropDown({ question }) {
       <div className="drop-down__faq-content">
         <p>
           Unfortunately we are unable to offer refunds on our products at this
-          time. If you have any concerns please email hello@beautyetal.ca
+          time. If you have any concerns please email hello@beautyhub.ca
         </p>
       </div>
     );
